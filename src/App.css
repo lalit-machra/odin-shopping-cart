@@ -2,3 +2,38 @@
   display: flex;
   gap: 10px;
 }
+
+.items {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.item {
+  border: 2px solid green;
+  padding: 6px;
+  border-radius: 12px;
+}
+
+.itemImg {
+  width: 300px;
+  height: 300px;
+}
+
+.itemCount {
+  border: none;
+  border-bottom: 2px solid black;
+  width: 30px;
+  margin-left: 5px;
+}
+
+.itemCount:hover {
+  border-bottom: none;
+  border: 2px solid black;
+}
+
+.addToCartBtn {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
