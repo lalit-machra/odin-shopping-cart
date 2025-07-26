@@ -1,5 +1,6 @@
 import HomePage from './Components/HomePage';
 import ShopPage from './Components/ShopPage';
+import Cart from './Components/Cart';
 
 const routes = [
   {
@@ -9,6 +10,10 @@ const routes = [
   {
     path: "/shopPage",
     element: <ShopPage></ShopPage>,
+  },
+  {
+    path: "/shoppingCart",
+    element: <Cart></Cart>
   },
 ];
 
