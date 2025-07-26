@@ -1,5 +1,6 @@
 import { default as Navbar } from './Navbar';
 import { useState, useEffect } from 'react';
+import styles from '../styles/shopPage.module.css';
 
 function ShopPage() {
   const [items, setItems] = useState([]);
@@ -18,13 +19,13 @@ function ShopPage() {
   
   let domData = items.map((item, index) => {
     return (
-    <div className="item" key={index}>
-      <img src={item.image} className="itemImg"></img>
+    <div className={styles.item} key={index}>
+      <img src={item.image} className={styles.itemImg}></img>
       <h2>{item.title}</h2>
       <h3>${item.price}</h3>
       <label>Quantity: </label>
-      <input type="number" className="itemCount" defaultValue="1" min="1"></input>
-      <button className="addToCartBtn" onClick={(e) => hanldeItemsInCart(e.target.parentNode)}>Add to Cart</button>
+      <input type="number" className={styles.itemCount} defaultValue="1" min="1"></input>
+      <button className={styles.addToCartBtn} onClick={(e) => hanldeItemsInCart(e.target.parentNode)}>Add to Cart</button>
     </div>);
   });
 
@@ -40,7 +41,7 @@ function ShopPage() {
     <>
       <Navbar itemsInCart={itemsInCart}></Navbar>
       <h1>ABc Online Store</h1>
-      <div className="items">
+      <div className={styles.items}>
         {domData}
       </div>
     </>

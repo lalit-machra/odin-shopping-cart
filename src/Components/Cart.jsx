@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
+import styles1 from '../styles/cart.module.css';
 
 export default function Cart() {
   const location = useLocation();
@@ -11,10 +12,10 @@ export default function Cart() {
 
   let itemsList = itemsInCart.map(item => 
     <tr key={item.name}>
-      <td>{item.name}</td>
-      <td>${item.price}</td>
-      <td>{item.quantity}</td>
-      <td>${item.value}</td>
+      <td className={styles1.tableData}>{item.name}</td>
+      <td className={styles1.tableData}>${item.price}</td>
+      <td className={styles1.tableData}>{item.quantity}</td>
+      <td className={styles1.tableData}>${item.value}</td>
     </tr>
   )
 
@@ -23,26 +24,26 @@ export default function Cart() {
       <>
         <Navbar></Navbar>
         <h1>Summary</h1>
-        <table className="cartDataTable">
+        <table className={styles1.cartDataTable}>
           <thead>
             <tr>
-              <th>Item</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total</th>
+              <th className={styles1.tableHeader}>Item</th>
+              <th className={styles1.tableHeader}>Price</th>
+              <th className={styles1.tableHeader}>Quantity</th>
+              <th className={styles1.tableHeader}>Total</th>
             </tr>
           </thead>
           <tbody>
             {itemsList}
             <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td className="totalAmount">${totalAmount}</td>
+              <td className={styles1.tableData}></td>
+              <td className={styles1.tableData}></td>
+              <td className={styles1.tableData}></td>
+              <td className={styles1.totalAmount}>${totalAmount}</td>
             </tr>
           </tbody>
         </table>
-        <button className="payBtn">Pay ${totalAmount}</button>
+        <button className={styles1.payBtn}>Pay ${totalAmount}</button>
       </>
     );
   } else {
